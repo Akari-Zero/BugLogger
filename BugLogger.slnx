@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="BugLogger.API/BugLogger.API.csproj" />
+  <Project Path="BugLogger.Domain/BugLogger.Domain.csproj" />
+  <Project Path="BugLogger.Infrastructure/BugLogger.Infrastructure.csproj" />
+</Solution>
