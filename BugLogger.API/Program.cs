@@ -1,4 +1,5 @@
-using BugLogger.Infrastructure;
+using BugLogger.Application.Extension;
+using BugLogger.Infrastructure.Extension;
 using Microsoft.IdentityModel.Tokens;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -10,6 +11,7 @@ builder.Services.AddControllers();
 builder.Services.AddOpenApi();
 
 builder.Services.AddInfrastructure(builder.Configuration);
+builder.Services.AddApplication();
 
 var app = builder.Build();
 

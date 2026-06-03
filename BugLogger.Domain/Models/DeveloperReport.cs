@@ -1,4 +1,6 @@
-﻿namespace BugLogger.Domain.Models
+﻿using System.ComponentModel.DataAnnotations.Schema;
+
+namespace BugLogger.Domain.Models
 {
   /// <summary>
   /// Class <c>DeveloperReport</c> models the response report of the developer to a BugReport.
@@ -9,11 +11,6 @@
     /// The database Id. 
     /// </summary>
     public int Id { get; set; }
-
-    /// <summary>
-    /// The issue is revolved.
-    /// </summary>
-    public bool IsResolved { get; set; } = false;
 
     /// <summary>
     /// The severity level of the bug.

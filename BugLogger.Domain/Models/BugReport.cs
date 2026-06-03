@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace BugLogger.Domain.Models
 {
@@ -11,12 +12,6 @@ namespace BugLogger.Domain.Models
     /// The database Id.
     /// </summary>
     public int Id { get; set; }
-
-    /// <summary>
-    /// The AppReport's bug id.
-    /// </summary>
-    [Required]
-    public string BugId { get; set; } = string.Empty;
 
     /// <summary>
     /// Required title of the bug report.
@@ -71,7 +66,7 @@ namespace BugLogger.Domain.Models
     /// <summary>
     /// The developer notes involving the issue.
     /// </summary>
-    public DeveloperReport DeveloperNotes { get; set; } = new();
+    public DeveloperReport? DeveloperNotes { get; set; }
 
     /// <summary>
     /// The Foreign Key to match with the AppReport.

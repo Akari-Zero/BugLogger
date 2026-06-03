@@ -18,9 +18,9 @@ namespace BugLogger.Infrastructure.Repositories.Reports
       return reports;
     }
 
-    public async Task<IEnumerable<DeveloperReport>> GetListByFilter(bool isResolved, Severity severity, Priority priority)
+    public async Task<IEnumerable<DeveloperReport>> GetListByFilter(Severity severity, Priority priority)
     {
-      var reports = await context.DevNotes.Where(d => d.IsResolved == isResolved && d.SeverityLevel == severity && d.PriorityLevel == priority).ToListAsync();
+      var reports = await context.DevNotes.Where(d => d.SeverityLevel == severity && d.PriorityLevel == priority).ToListAsync();
 
       return reports;
     }

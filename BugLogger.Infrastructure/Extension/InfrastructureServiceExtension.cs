@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace BugLogger.Infrastructure
+namespace BugLogger.Infrastructure.Extension
 {
   public static class InfrastructureServiceExtension
   {

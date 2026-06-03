@@ -15,6 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\BugLogger.Application\BugLogger.Application.csproj" />
     <ProjectReference Include="..\BugLogger.Infrastructure\BugLogger.Infrastructure.csproj" />
   </ItemGroup>
 
