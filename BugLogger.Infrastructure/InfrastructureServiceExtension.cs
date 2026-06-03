@@ -7,11 +7,10 @@ namespace BugLogger.Infrastructure
 {
   public static class InfrastructureServiceExtension
   {
-    public static void AddInfrastructure(this IServiceCollection services, string? connectionString = null)
+    public static void AddInfrastructure(this IServiceCollection services, IConfiguration configuration)
     {
-
-      services.AddDbContext<BugLoggerDbContext>(options => options.UseSqlServer(connectionString
-      ));
+      var connectionString = configuration.GetConnectionString("BugLoggerDbContextConnection");
+      services.AddDbContext<BugLoggerDbContext>(options => options.UseSqlServer(connectionString));
 
     }
   }
