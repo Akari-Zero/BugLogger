@@ -66,7 +66,5 @@ namespace BugLogger.Infrastructure.Repositories.Reports
       await context.SaveChangesAsync();
       return entity.Id;
     }
-
-
   }
 }
