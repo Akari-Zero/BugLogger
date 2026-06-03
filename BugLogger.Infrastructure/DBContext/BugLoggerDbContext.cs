@@ -3,18 +3,12 @@ using Microsoft.EntityFrameworkCore;
 
 namespace BugLogger.Infrastructure.DBContext
 {
-  internal class BugLoggerDbContext : DbContext
+  internal class BugLoggerDbContext(DbContextOptions<BugLoggerDbContext> options) : DbContext(options)
   {
     internal DbSet<User> Users { get; set; }
     internal DbSet<AppReport> Programs { get; set; }
     internal DbSet<BugReport> Bugs { get; set; }
     internal DbSet<DeveloperReport> DevNotes { get; set; }
-
-    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-    {
-      //base.OnConfiguring(optionsBuilder);
-      optionsBuilder.UseSqlServer("Server=(localdb)\\TestServer;Database=BugLoggerDb;Trusted_Connection=True;");
-    }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
