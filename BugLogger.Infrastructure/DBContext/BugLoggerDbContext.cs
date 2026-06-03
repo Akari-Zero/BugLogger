@@ -15,7 +15,7 @@ namespace BugLogger.Infrastructure.DBContext
       base.OnModelCreating(modelBuilder);
 
       modelBuilder.Entity<AppReport>().HasMany(a => a.Bugs).WithOne().HasForeignKey(b => b.AppReportId);
-      modelBuilder.Entity<BugReport>().HasOne(b => b.DeveloperNotes);//.WithOne().HasForeignKey<DeveloperReport>(d => d.BugReportId);
+      modelBuilder.Entity<BugReport>().HasOne(b => b.DeveloperNotes);
 
       SeedData(modelBuilder);
     }
