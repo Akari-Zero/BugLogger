@@ -28,7 +28,7 @@
     /// <summary>
     /// Priority Level of the bug.
     /// </summary>
-    public string PriorityLevel { get; set; } = string.Empty;
+    public Priority PriorityLevel { get; set; } = Priority.None;
 
     /// <summary>
     /// The Foreign key to the BugReport.
