@@ -11,7 +11,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\BugLogger.Domain\BugLogger.Domain.csproj" />
     <ProjectReference Include="..\BugLogger.Infrastructure\BugLogger.Infrastructure.csproj" />
   </ItemGroup>
 

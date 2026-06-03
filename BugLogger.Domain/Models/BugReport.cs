@@ -71,7 +71,7 @@ namespace BugLogger.Domain.Models
     /// <summary>
     /// The developer notes involving the issue.
     /// </summary>
-    public DeveloperReport? DeveloperNotes { get; set; }
+    public DeveloperReport DeveloperNotes { get; set; } = new();
 
     /// <summary>
     /// The Foreign Key to match with the AppReport.
