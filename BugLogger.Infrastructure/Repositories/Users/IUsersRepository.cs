@@ -5,7 +5,7 @@ namespace BugLogger.Infrastructure.Repositories.Users
   /// <summary>
   /// Class <c>UsersRepository</c> handles sending and receiving data to the database.
   /// </summary>
-  internal interface IUsersRepository
+  public interface IUsersRepository
   {
     /// <summary>
     /// Return a list of all Users.
