@@ -44,5 +44,29 @@ namespace BugLogger.Infrastructure.Repositories.Reports
 
       return reports;
     }
+
+    /// <summary>
+    /// Delete a DeveloperReport from the database.
+    /// </summary>
+    /// <param name="entity">The DeveloperReport to be deleted</param>
+    public async Task DeleteDeveloperReportById(DeveloperReport entity)
+    {
+      var report = context.Remove(entity);
+      await context.SaveChangesAsync();
+    }
+
+    /// <summary>
+    /// Create a DeveloperReport to the database.
+    /// </summary>
+    /// <param name="entity">DeveloperReport to be added</param>
+    /// <returns>Entity's database ID</returns>
+    public async Task<int> CreateDeveloperReport(DeveloperReport entity)
+    {
+      await context.DevNotes.AddAsync(entity);
+      await context.SaveChangesAsync();
+      return entity.Id;
+    }
+
+
   }
 }
