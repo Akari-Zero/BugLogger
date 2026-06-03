@@ -18,4 +18,8 @@
     <ProjectReference Include="..\BugLogger.Domain\BugLogger.Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Repositories\Reports\" />
+  </ItemGroup>
+
 </Project>
