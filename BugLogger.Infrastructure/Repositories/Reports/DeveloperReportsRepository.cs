@@ -1,4 +1,5 @@
-﻿using BugLogger.Domain.Models;
+﻿using BugLogger.Application.Repository;
+using BugLogger.Domain.Models;
 using BugLogger.Infrastructure.DBContext;
 using Microsoft.EntityFrameworkCore;
 

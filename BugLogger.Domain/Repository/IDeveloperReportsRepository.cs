@@ -1,6 +1,6 @@
 ﻿using BugLogger.Domain.Models;
 
-namespace BugLogger.Infrastructure.Repositories.Reports
+namespace BugLogger.Application.Repository
 {
   /// <summary>
   /// Class <c>DeveloperReportsRepository</c> handles sending and receiving data to the database.
