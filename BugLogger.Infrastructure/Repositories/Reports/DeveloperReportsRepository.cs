@@ -23,17 +23,6 @@ namespace BugLogger.Infrastructure.Repositories.Reports
     }
 
     /// <summary>
-    /// Get a list of DeveloperReport based on their associated BugReport Id.
-    /// </summary>
-    /// <param name="id">The Id of a BugReport</param>
-    /// <returns>A list of DeveloperReport</returns>
-    public async Task<IEnumerable<DeveloperReport>> GetListByBugReportIdAsync(int id)
-    {
-      var reports = await context.DevNotes.Where(d => d.BugReportId == id).ToListAsync();
-      return reports;
-    }
-
-    /// <summary>
     /// Get a list of DeveloperReport based on Severity and Priority levels.
     /// </summary>
     /// <param name="severity">The severity of the bug</param>
@@ -50,7 +39,7 @@ namespace BugLogger.Infrastructure.Repositories.Reports
     /// Delete a DeveloperReport from the database.
     /// </summary>
     /// <param name="entity">The DeveloperReport to be deleted</param>
-    public async Task DeleteDeveloperReportByIdAsync(DeveloperReport entity)
+    public async Task DeleteDeveloperReportAsync(DeveloperReport entity)
     {
       var report = context.Remove(entity);
       await context.SaveChangesAsync();

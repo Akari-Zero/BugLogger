@@ -18,7 +18,7 @@ namespace BugLogger.Application.Repository
     /// Delete a DeveloperReport from the database.
     /// </summary>
     /// <param name="entity">The DeveloperReport to be deleted</param>
-    Task DeleteDeveloperReportByIdAsync(DeveloperReport entity);
+    Task DeleteDeveloperReportAsync(DeveloperReport entity);
 
     /// <summary>
     /// Retrieves a DeveloperReport from its id from the database.
@@ -26,13 +26,6 @@ namespace BugLogger.Application.Repository
     /// <param name="id">The report's database id</param>
     /// <returns>A DeveloperReport or null if not found</returns>
     Task<DeveloperReport?> GetByIdAsync(int id);
-
-    /// <summary>
-    /// Get a list of DeveloperReport based on their associated BugReport Id.
-    /// </summary>
-    /// <param name="id">The Id of a BugReport</param>
-    /// <returns>A list of DeveloperReport</returns>
-    Task<IEnumerable<DeveloperReport>> GetListByBugReportIdAsync(int id);
     
     /// <summary>
     /// Get a list of DeveloperReport based on Severity and Priority levels.
