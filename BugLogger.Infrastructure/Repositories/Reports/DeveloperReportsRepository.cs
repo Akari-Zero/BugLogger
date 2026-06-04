@@ -27,7 +27,7 @@ namespace BugLogger.Infrastructure.Repositories.Reports
     /// </summary>
     /// <param name="id">The Id of a BugReport</param>
     /// <returns>A list of DeveloperReport</returns>
-    public async Task<IEnumerable<DeveloperReport>> GetListByBugReportId(int id)
+    public async Task<IEnumerable<DeveloperReport>> GetListByBugReportIdAsync(int id)
     {
       var reports = await context.DevNotes.Where(d => d.BugReportId == id).ToListAsync();
       return reports;
@@ -39,7 +39,7 @@ namespace BugLogger.Infrastructure.Repositories.Reports
     /// <param name="severity">The severity of the bug</param>
     /// <param name="priority">The current priority of the bug</param>
     /// <returns>A filtered list of DeveloperReport</returns>
-    public async Task<IEnumerable<DeveloperReport>> GetListByFilter(Severity severity, Priority priority)
+    public async Task<IEnumerable<DeveloperReport>> GetListByFilterAsync(Severity severity, Priority priority)
     {
       var reports = await context.DevNotes.Where(d => d.SeverityLevel == severity && d.PriorityLevel == priority).ToListAsync();
 
@@ -50,7 +50,7 @@ namespace BugLogger.Infrastructure.Repositories.Reports
     /// Delete a DeveloperReport from the database.
     /// </summary>
     /// <param name="entity">The DeveloperReport to be deleted</param>
-    public async Task DeleteDeveloperReportById(DeveloperReport entity)
+    public async Task DeleteDeveloperReportByIdAsync(DeveloperReport entity)
     {
       var report = context.Remove(entity);
       await context.SaveChangesAsync();
@@ -61,7 +61,7 @@ namespace BugLogger.Infrastructure.Repositories.Reports
     /// </summary>
     /// <param name="entity">DeveloperReport to be added</param>
     /// <returns>Entity's database ID</returns>
-    public async Task<int> CreateDeveloperReport(DeveloperReport entity)
+    public async Task<int> CreateDeveloperReportAsync(DeveloperReport entity)
     {
       await context.DevNotes.AddAsync(entity);
       await context.SaveChangesAsync();
