@@ -18,6 +18,6 @@ namespace BugLogger.Domain.Models
     [Required]
     public string Name { get; set; } = string.Empty;
 
-
+    public List<AppReport> Applications { get; set; } = new();
   }
 }

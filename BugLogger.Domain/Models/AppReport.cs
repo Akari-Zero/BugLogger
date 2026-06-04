@@ -23,6 +23,9 @@ namespace BugLogger.Domain.Models
     /// </summary>
     public List<BugReport> Bugs { get; set; } = new List<BugReport>();
 
-
+    /// <summary>
+    /// The Id of the owner of the Application
+    /// </summary>
+    public int UserId { get; set; }
   }
 }

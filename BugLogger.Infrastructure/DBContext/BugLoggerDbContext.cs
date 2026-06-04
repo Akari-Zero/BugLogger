@@ -14,6 +14,7 @@ namespace BugLogger.Infrastructure.DBContext
     {
       base.OnModelCreating(modelBuilder);
 
+      modelBuilder.Entity<User>().HasMany(u => u.Applications).WithOne().HasForeignKey(u => u.UserId);
       modelBuilder.Entity<AppReport>().HasMany(a => a.Bugs).WithOne().HasForeignKey(b => b.AppReportId);
       modelBuilder.Entity<BugReport>().HasOne(b => b.DeveloperNotes);
 
@@ -29,9 +30,10 @@ namespace BugLogger.Infrastructure.DBContext
         {
           Id = 1,
           Name = "BugLogger",
+          UserId = 1,
         }  
         
-        );
+      );
 
       modelBuilder.Entity<BugReport>().HasData(
         new BugReport()
